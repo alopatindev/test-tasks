@@ -1,0 +1,24 @@
+#!/usr/bin/env mkb
+
+files
+{
+    (source)
+    "*.h"
+    "*.cpp"
+}
+
+assets
+{
+    (data)
+    "textures/shark.png"
+	"textures/water.png"
+	"textures/star.png"
+	"textures/restart_button.png"
+	"textures/restart_window.png"
+}
+
+subprojects
+{
+    iwgx
+    iw2d
+}
