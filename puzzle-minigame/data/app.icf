@@ -1,0 +1,11 @@
+[S3E]
+#MemSize=4200000
+MemSize=42000000
+
+[GX]
+DataCacheSize=64000
+
+[GX]
+NumTPages=20
+
+[GL]

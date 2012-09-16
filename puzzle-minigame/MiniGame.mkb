@@ -1,0 +1,29 @@
+#!/usr/bin/env mkb
+
+files
+{
+    (source)
+    "*.h"
+    "*.cpp"
+
+    (source/GameSDK)
+    ["GameSDK"]
+    "*.h"
+    "*.cpp"
+}
+
+assets
+{
+    (data)
+    "textures/packman.jpg"
+    "textures/novgorod.jpg"
+    "textures/pointer.png"
+    "textures/youwon.png"
+    "textures/restart.png"
+}
+
+subprojects
+{
+    iwgx
+    iw2d
+}
