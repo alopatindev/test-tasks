@@ -1,0 +1,6 @@
+Built on Gentoo GNU/Linux with
+    =sys-devel/gcc-4.5.4
+    =media-libs/freeglut-2.6.0
+    =media-libs/mesa-8.0.3
+Should work with other versions, but didn't tested.
+Also I don't care which way reels should roll :P
