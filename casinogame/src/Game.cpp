@@ -149,7 +149,7 @@ void GameClass::update()
             if (stripesSpeeds[i] > 0.0f)
             {
                 if (stopTimer >= 300 &&
-                    (int)offsets[i] % stripeHeight < OFFSET_EPS)
+                    abs((int)offsets[i]) < OFFSET_EPS)
                 {
                     stripesSpeeds[i] = 0.0f;
                     stopTimer = 0;
