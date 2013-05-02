@@ -118,7 +118,7 @@ void GameClass::renderStripes(int stripeWidth, float scaleFactorX, float scaleFa
             Graphics::drawTexture(
                 items[stripes[i][SQUARES_NUMBER - j]].c_str(),
                 i * stripeWidth * scaleFactorX,
-                j * stripeWidth * scaleFactorY + (int)offsets[i] - stripeWidth * scaleFactorY,
+                (j + 1) * stripeWidth * scaleFactorY + (int)offsets[i] - stripeWidth * scaleFactorY,
                 stripeWidth * scaleFactorX,
                 stripeWidth * scaleFactorY
             );
@@ -174,13 +174,13 @@ void GameClass::update()
     stripeHeight = stripeWidth * scaleFactorY;
     for (int i = 0; i < STRIPES_NUMBER; ++i)
     {
-        offsets[i] += stripesSpeeds[i];
-        if (offsets[i] > stripeHeight)
+        offsets[i] -= stripesSpeeds[i];
+        if (offsets[i] < -stripeHeight)
         {
-            offsets[i] -= stripeHeight;
-            for (int j = 0; j < SQUARES_NUMBER; ++j)
-                stripes[i][j] = stripes[i][j + 1];
-            stripes[i][SQUARES_NUMBER] = rand() % items.size();
+            offsets[i] += stripeHeight;
+            for (int j = SQUARES_NUMBER; j >= 1; --j)
+                stripes[i][j] = stripes[i][j - 1];
+            stripes[i][0] = rand() % items.size();
         }
     }
 
